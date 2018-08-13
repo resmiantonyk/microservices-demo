@@ -1,0 +1,7 @@
+FROM alpine:edge
+MAINTAINER resmiantonyk
+RUN apk add --no-cache openjdk8
+COPY target/microservices-demo-2.0.0.RELEASE.jar /opt/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/lib/microservices-demo-2.0.0.RELEASE.jar", "accounts"]
+EXPOSE 2222
